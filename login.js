@@ -1,4 +1,6 @@
 function login() {
+    console.log("Login function called"); // Debugging line to check if the function is being called
+    
     // Predefined credentials
     const companyName = "hardtrac";
     const email = "test@email.com";
