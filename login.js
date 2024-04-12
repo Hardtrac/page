@@ -1,6 +1,6 @@
 function login() {
-    console.log("Login function called"); // Debugging line to check if the function is being called
-    
+    console.log("Login function called"); 
+
     // Predefined credentials
     const companyName = "hardtrac";
     const email = "test@email.com";
@@ -13,11 +13,18 @@ function login() {
     const inputEmployeeID = document.getElementById("employee-id").value;
     const inputPassword = document.getElementById("password").value;
 
+    console.log("Input Company Name:", inputCompanyName); 
+    console.log("Input Email:", inputEmail); 
+    console.log("Input Employee ID:", inputEmployeeID); 
+    console.log("Input Password:", inputPassword); 
+
     // Check credentials
     if (inputCompanyName === companyName && inputEmail === email && inputEmployeeID === employeeID && inputPassword === password) {
+        console.log("Credentials matched"); 
         // Redirect to another page
-        window.location.href = "https://hardtrac.co.in/?v=6c8403f93333"; // Change 'success.html' to the desired page URL
+        window.location.href = "https://hardtrac.co.in/?v=6c8403f93333";
     } else {
+        console.log("Invalid credentials"); 
         alert("Invalid credentials. Please try again.");
     }
 }
@@ -30,4 +37,11 @@ document.getElementById("show-password").addEventListener("change", function() {
     } else {
         passwordInput.type = "password";
     }
+});
+
+// Check if login function is called
+document.getElementById("login-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+    console.log("Form submitted"); 
+    login(); // Call the login function
 });
